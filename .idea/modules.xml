@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sharding-jdbc-demo/sharding-jdbc-demo.iml" filepath="$PROJECT_DIR$/sharding-jdbc-demo/sharding-jdbc-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharding-proxy-demo/sharding-proxy-demo.iml" filepath="$PROJECT_DIR$/sharding-proxy-demo/sharding-proxy-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shardingsphere.iml" filepath="$PROJECT_DIR$/shardingsphere.iml" />
+    </modules>
+  </component>
+</project>
