@@ -43,16 +43,20 @@ public class UserController {
 
 	//垂直分库
 	@GetMapping("/insert")
-	@Transactional	//可以保证分布式事务
-	public void  insert() {
+	@Transactional(rollbackFor = Exception.class)//这里对于shardingsphere来说可以理解为非分布式事务操作（虽然调用了不同的数据库）
+//	@ShardingSphereTransactionType(TransactionType.XA)
+	public void insert() {
 		User user = new User();
 		user.setUname("强哥");
 		userMapper.insert(user);
 
+		int index = 1 / 0;
 		Order order = new Order();
 		order.setOderNo("erewx");
 		order.setUserId(user.getId());
 		order.setAmount(BigDecimal.valueOf(12));
 		orderMapper.insert(order);
+
+		//rpc调用其它数据源的时候，才会真正的需要处理分布式事务
 	}
 }

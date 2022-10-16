@@ -30,5 +30,5 @@ public interface OrderMapper extends BaseMapper<Order> {
 			"SUM(i.price * i.count) amount\n" +
 			"FROM t_order o LEFT JOIN t_order_item i ON o.order_no = i.order_no\n" +
 			"GROUP BY o.order_no\n")
-	List<OrderVO> selectList();
+	List<OrderVO> list();
 }

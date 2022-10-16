@@ -172,12 +172,19 @@ public class HorizontalShardingTest {
 		orders.forEach(System.out::println);
 
 		//会跨库查询，会union all表
-		List<Order> orders1 = orderMapper.selectList(new QueryWrapper<Order>().ge("order_no", 1L).le("order_no", 4L));
-		orders1.forEach(System.out::println);
+//		List<Order> orders1 = orderMapper.selectList(new QueryWrapper<Order>().ge("order_no", 1L).le("order_no", 4L));
+//		orders1.forEach(System.out::println);
+//
+//		//不会跨库，会union all表
+//		List<Order> orders2 = orderMapper.selectList(new QueryWrapper<Order>().eq("user_id", 1L).ge("order_no", 1L).le("order_no", 4L));
+//		orders2.forEach(System.out::println);
 
+		//非分片键查询
 		//不会跨库，会union all表
-		List<Order> orders2 = orderMapper.selectList(new QueryWrapper<Order>().eq("user_id", 1L).ge("order_no", 1L).le("order_no", 4L));
-		orders2.forEach(System.out::println);
+		orderMapper.selectList(new QueryWrapper<Order>().eq("user_id", 1L).ge("amount",1L).le("amount",10L));
+
+		//会跨库，会union all表
+		orderMapper.selectList(new QueryWrapper<Order>().ge("amount",1L).le("amount",10L));
 	}
 
 
@@ -225,7 +232,7 @@ public class HorizontalShardingTest {
 	 */
 	@Test
 	public void testSelectOrderVo() {
-		List<OrderVO> orderVOS = orderMapper.selectList();
+		List<OrderVO> orderVOS = orderMapper.list();
 		orderVOS.forEach(System.out::println);
 	}
 

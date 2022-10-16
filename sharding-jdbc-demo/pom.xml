@@ -56,6 +56,27 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+<!--        &lt;!&ndash; 使用 XA 事务时，需要引入此模块 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shardingsphere</groupId>-->
+<!--            <artifactId>shardingsphere-transaction-xa-core</artifactId>-->
+<!--            <version>5.1.1</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; 使用 XA 的 Narayana模式时，需要引入此模块 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shardingsphere</groupId>-->
+<!--            <artifactId>shardingsphere-transaction-xa-narayana</artifactId>-->
+<!--            <version>5.1.1</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; 使用 BASE 事务时，需要引入此模块 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shardingsphere</groupId>-->
+<!--            <artifactId>shardingsphere-transaction-base-seata-at</artifactId>-->
+<!--            <version>5.1.1</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <dependencyManagement>

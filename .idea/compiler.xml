@@ -13,8 +13,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="sharding-jdbc-demo" target="1.5" />
-      <module name="sharding-proxy-demo" target="1.5" />
+      <module name="sharding-jdbc-demo" target="1.8" />
+      <module name="sharding-proxy-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
